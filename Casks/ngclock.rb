@@ -2,8 +2,7 @@ cask "ngclock" do
   version "0.4.0"
   sha256 "bae4f9b5885ea2be455f1af77caa8a8b41626411d6fee999d255f60ca947412c"
 
-  url "https://github.com/AMZNGM/ngclock-releases/releases/download/v#{version}/NGCLock-mac-arm64.dmg",
-      verified: "github.com/AMZNGM/ngclock-releases/"
+  url "https://github.com/AMZNGM/ngclock-releases/releases/download/v#{version}/NGCLock-mac-arm64.dmg"
   name "NGCLock"
   desc "Net work-hour limit that sits in your menu bar"
   homepage "https://ngclock.amzngm.com/"
@@ -14,6 +13,7 @@ cask "ngclock" do
   end
 
   depends_on arch: :arm64
+  depends_on macos: :big_sur
 
   app "NGCLock.app"
 
