@@ -1,0 +1,13 @@
+name: tests
+on:
+  push:
+    paths: ['Casks/**']
+  pull_request:
+    paths: ['Casks/**']
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew style Casks/ngclock.rb
+      - run: brew audit --cask --online Casks/ngclock.rb
