@@ -1,13 +1,16 @@
 name: tests
 on:
   push:
-    paths: ['Casks/**']
+    paths: ['Casks/**', '.github/workflows/**']
   pull_request:
-    paths: ['Casks/**']
+    paths: ['Casks/**', '.github/workflows/**']
 jobs:
   test:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - run: brew style Casks/ngclock.rb
-      - run: brew audit --cask --online Casks/ngclock.rb
+      - run: brew update
+      # brew audit/style want a tap name, not a path — so tap this checkout.
+      - run: brew tap amzngm/ngclock "$GITHUB_WORKSPACE"
+      - run: brew style amzngm/ngclock
+      - run: brew audit --cask --online amzngm/ngclock/ngclock
