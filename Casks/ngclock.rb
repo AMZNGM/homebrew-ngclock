@@ -13,7 +13,7 @@ cask "ngclock" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: :big_sur
+  depends_on macos: :monterey
 
   app "NGCLock.app"
 
