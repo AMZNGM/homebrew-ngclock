@@ -28,7 +28,10 @@ cask "ngclock" do
 
   caveats <<~EOS
     NGCLock isn't notarised yet, so macOS blocks the first launch.
-    Open it once, then: System Settings -> Privacy & Security -> Open Anyway.
+    Right-click NGCLock in Applications and choose Open, once.
     After that it launches normally.
+
+    Homebrew removed --no-quarantine in 5.0, so this step can't be
+    skipped from the install command any more.
   EOS
 end
