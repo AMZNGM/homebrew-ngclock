@@ -5,11 +5,12 @@ limit that lives in your menu bar.
 
 ```sh
 brew tap amzngm/ngclock
-brew install ngclock
+brew install --cask ngclock
 ```
 
 Apple Silicon only for now. The build isn't notarised yet, so the first launch
-needs **System Settings → Privacy & Security → Open Anyway**.
+needs a **right-click → Open** on NGCLock in Applications — once. Homebrew
+removed `--no-quarantine` in 5.0, so the install command can't skip it.
 
 This file and `Casks/ngclock.rb` are generated from the main repo's
 `scripts/brew.mjs` on every release — don't hand-edit.
