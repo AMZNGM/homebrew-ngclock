@@ -1,6 +1,6 @@
 cask "ngclock" do
-  version "0.5.1"
-  sha256 "fffbf46efca5be6b111444a6ebefd46c5c434093fb81d4cf56731213bef8c379"
+  version "0.6.0"
+  sha256 "0832c59f5bee9a8277b92491532730296b61ff9e1d6937d5a4da8e51fad192ae"
 
   url "https://github.com/AMZNGM/ngclock-releases/releases/download/v#{version}/NGCLock-mac-arm64.dmg"
   name "NGCLock"
