@@ -16,5 +16,7 @@ jobs:
       - run: brew update
       # brew audit/style want a tap name, not a path — so tap this checkout.
       - run: brew tap amzngm/ngclock "$GITHUB_WORKSPACE"
+      # Homebrew won't load casks from a third-party tap until it's trusted.
+      - run: brew trust amzngm/ngclock
       - run: brew style amzngm/ngclock
       - run: brew audit --cask --online amzngm/ngclock/ngclock
